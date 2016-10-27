@@ -159,7 +159,8 @@ With promises, this is reduced to:
 
 {% include code-caption.html content="common/models/my-model.js" %}
 ```javascript
-MyModel.myFunc = function(input, cb) {
+module.exports = function(MyModel) {
+ MyModel.myFunc = function(input, cb) {
    return Todo.find()
      .map(generateStats(input));
  };
